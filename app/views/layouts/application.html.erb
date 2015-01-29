@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CGL - Главная</title>
+
+  <!-- Bootstrap -->
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!-- Header -->
+<header role="banner" class="container">
+
+  <div class="toolbar">
+    <div class="game-logo dropdown">
+      <%= image_tag("dota.png", alt: "") %>
+      <span href="" class="dropdown-btn"></span>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href=""><i class="ico-games ico-dota"></i>Hearthstone</a></li>
+        <li><a href=""><i class="ico-games ico-csgo"></i>Heroes of the Storm</a></li>
+      </ul>
+    </div>
+    <nav class="navi" role="navigation">
+      <ul>
+        <% if current_user %>
+        <li><%= link_to "Профиль", profile_path(id: current_user.profile) %></li>
+        <li><a href="">Команда</a></li>
+        <% end %>
+        <li><a href="">Ладдер</a></li>
+        <li><a href="">Турниры</a></li>
+        <li><a href="">Поиск игроков</a></li>
+        <li><a href="">Зал славы</a></li>
+      </ul>
+    </nav>
+    <% if current_user %>
+    <!-- Авторизов. -->
+    <nav class="navi navi-right" role="navigation">
+      <ul>
+        <li><%= link_to "Выход", logout_path, method: :delete %> </li>
+      </ul>
+    </nav>
+    <!-- // Авторизов. // -->
+    <nav class="navi navi-command navi-right" role="navigation">
+      <!-- Авторизов. -->
+      <ul>
+        <li><a href="">Na`Vi</a></li>
+        <li>
+          <span class="clabel clabel--green">+1337</span>
+          <span class="clabel clabel--red">-322</span>
+        </li>
+      </ul>
+      </nav>
+      <!-- // Авторизов. // -->
+    <!-- Авторизов. -->
+    <nav class="navi navi-command navi-right" role="navigation">
+      <div class="user">
+        <a href="" class="ava">
+          <%= image_tag(current_user.profile.avatar_url, alt: "") %>
+        </a>
+        <%= link_to profile_path(id: current_user.profile) do %>
+          <%= current_user.username %> <span class="dropdown"></span>
+        <% end %>
+      </div>
+    </nav>
+    <!-- // Авторизов. // -->
+        <% else %>
+        <nav class="navi navi-command navi-right" role="navigation">
+        <ul>
+          <li><a href="" data-toggle="modal" data-target="#logInModal">Вход</a><span>/</span><%= link_to "Регистрация", registration_path %></li>
+        </ul>
+        </nav>
+    <% end %>
+
+  </div>
+  <div class="logo">
+    <%= link_to game_root_path do%>
+      <%= image_tag("logo.png", alt: "") %>
+    <% end %>
+    <span>CHAOS GAME LEAGUE</span>
+  </div>
+</header>
+<!-- // End Header //-->
+<!-- Container -->
+<div class="main-container container">
+  <!-- Sidebar -->
+  <aside role="complementary">
+    <div class="widget widget--top10">
+      <div class="widget__heading heading">
+        <h1>Топ 10</h1>
+      </div>
+      <div class="widget__content">
+        <ul>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="widget widget--sponsors">
+      <div class="widget__heading heading">
+        <h1>Спонсоры</h1>
+      </div>
+      <div class="widget__content">
+        <%= image_tag("sponsor.jpg", alt: "") %>
+      </div>
+    </div>
+  </aside>
+  <!-- // End sidebar //-->
+  <!-- Content -->
+  <%= yield :content %>
+   <!-- // End Content // -->
+</div> <!--End Container-->
+<footer class="container">
+  <section class="logo">
+    <a href="">
+      <%= image_tag("logo2.png", alt: "") %>
+    </a>
+    <span>CHAOS GAME LEAGUE</span>
+  </section>
+  <nav class="nav">
+    <ul>
+      <li><a href=""><i class="ico-games ico-dota"></i>Hearthstone</a></li>
+      <li><a href=""><i class="ico-games ico-csgo"></i>Heroes of the Storm</a></li>
+    </ul>
+    <ul>
+      <li><a href=""><i class="ico-social ico-vk"></i>Вконтакте</a></li>
+      <li><a href=""><i class="ico-social ico-fb"></i>Facebook</a></li>
+      <li><a href=""><i class="ico-social ico-yt"></i>Youtube</a></li>
+      <li><a href=""><i class="ico-social ico-tw"></i>Twitch</a></li>
+    </ul>
+  </nav>
+  <div class="sponsors">
+    <a href=""><%= image_tag("brand.png", alt: "") %></a>
+    <a href=""><%= image_tag("brand.png", alt: "") %></a>
+    <a href=""><%= image_tag("brand.png", alt: "") %></a>
+    <a href=""><%= image_tag("brand.png", alt: "") %></a>
+  </div>
+</footer>
+<!-- Modal -->
+<div class="modal login-modal fade" id="logInModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Вход</h4>
+      </div>
+      <div class="modal-body">
+        <div class="login-block">
+          <%= form_tag login_path do %>
+              <div class="info-field">
+                <label class="info-field__item info-field__item--text">
+                  <%= text_field_tag :email, nil,class: "info-field__item__input", placeholder: "E-mail" %>
+                </label>
+              </div>
+              <div class="info-field">
+                <label class="info-field__item info-field__item--text">
+                  <%= password_field_tag :password, nil, class: "info-field__item__input", placeholder: "Пароль" %>
+                </label>
+              </div>
+              <div class="login-block__actions">
+                <div class="checkbox">
+                  <input type="checkbox" id="cb1"/>
+                  <label for="cb1">
+                    <span></span>
+                    Запомнить пароль
+                  </label>
+                </div>
+                <a href="">Забыли пароль?</a>
+              </div>
+              <div class="info-field">
+                <%= submit_tag "Войти", class: "button-submit" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --
+<script src="js/bootstrap.min.js"></script> -->
+</body>
+</html>

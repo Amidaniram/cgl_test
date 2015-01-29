@@ -1,0 +1,78 @@
+<% content_for :content do %>
+<div class="content" role="main">
+  <a href="" class="online-stream-btn">Онлайн стрим</a>
+  <div class="content__block">
+    <div class="content__block__heading heading">
+      <h1>Профиль игрока</h1>
+    </div>
+    <div class="content__block__content">
+      <div class="profile">
+        <div class="profile__main">
+          <div class="profile__main__img">
+            <a href="" class="profile-edit-btn">Редактировать профиль</a>
+            <a href="" class="profile__img">
+              <%= image_tag(@profile.avatar_url, alt: "") %>
+              <span class="profile__img__status user-status user-status--online"></span>
+            </a>
+          </div>
+          <div class="profile__main__info">
+            <div class="info-field">
+              <div class="info-field__label"><span>Имя</span></div>
+              <div class="info-field__item"><%= @profile.first_name %></div>
+            </div>
+            <div class="info-field">
+              <div class="info-field__label"><span>Никнейм</span></div>
+              <div class="info-field__item"><%= @profile.user.username %></div>
+            </div>
+            <div class="info-field">
+              <div class="info-field__label"><span>Местоположение</span></div>
+              <div class="info-field__item">Москва / Россия</div>
+            </div>
+            <div class="info-field">
+              <div class="info-field__label"><span>SteamID</span></div>
+              <div class="info-field__item">0:0:19772482</div>
+            </div>
+            <div class="info-field">
+              <div class="info-field__label"><span>Battletag</span></div>
+              <div class="info-field__item">0:0:19772482</div>
+            </div>
+            <div class="info-field">
+              <div class="info-field__label"><span>Skype</span></div>
+              <div class="info-field__item"><%= @profile.skype %></div>
+            </div>
+          </div>
+        </div>
+        <div class="profile__other whiteblock">
+          <div class="profile__other__left">
+            <div class="profile__team-ava">
+              <a href="">
+                <img src="img/team-ava.png" alt=""/>
+              </a>
+            </div>
+            <p>Играет в команде: <a href="">Na`Vi Gaming</a></p>
+            <p>Рейтинг команды:  +1337</p>
+            <p>Дата регистрации: 17 Января 1337г.</p>
+          </div>
+          <div class="profile__other__right">
+            <table class="profile__statistic">
+              <tr>
+                <td>G</td>
+                <td>W</td>
+                <td>L</td>
+                <td>D</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
