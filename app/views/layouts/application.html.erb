@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CGL - Главная</title>
+  <title>CGL - <%= Game.find_by_short_name(params[:game]).name %></title>
 
   <!-- Bootstrap -->
   <%= stylesheet_link_tag "application" %>
@@ -27,8 +27,9 @@
       <%= image_tag("dota.png", alt: "") %>
       <span href="" class="dropdown-btn"></span>
       <ul class="dropdown-menu" role="menu">
-        <li><a href=""><i class="ico-games ico-dota"></i>Hearthstone</a></li>
-        <li><a href=""><i class="ico-games ico-csgo"></i>Heroes of the Storm</a></li>
+        <li><%= link_to url_for(game: 'dota2') do %><i class="ico-games ico-dota"></i>Dota 2<% end %></li>
+        <li><%= link_to url_for(game: 'hs') do %><i class="ico-games ico-dota"></i>HeartStone<% end %></li>
+        <li><%= link_to url_for(game: 'hots') do %><i class="ico-games ico-dota"></i>Heroes of the Storm<% end %></li>
       </ul>
     </div>
     <nav class="navi" role="navigation">
@@ -101,6 +102,10 @@
       </div>
       <div class="widget__content">
         <ul>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
+          <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
           <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
           <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
           <li><a href="">Dendi</a><span class="clabel clabel--green">+1337</span></li>
