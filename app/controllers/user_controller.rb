@@ -18,8 +18,12 @@ class UserController < ApplicationController
   end
 
   def new
-    @user = User.new
-    @profile = Profile.new
+    if session[:user_id]
+      redirect_to profile_path(params[:game], User.find(session[:user_id]).profile)
+    else
+      @user = User.new
+      @profile = Profile.new
+    end
   end
 
   private

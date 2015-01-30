@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'game_session#new'
-  scope ':game' do
+  scope ':game', constraints: { game: /hs|hots/} do
     get '/', to: 'game_session#show', as: 'game_root'
     get 'registration', to: 'user#new'
     post 'registration', to: 'user#create'
