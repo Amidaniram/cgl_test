@@ -1,5 +1,7 @@
 class Game < ActiveRecord::Base
 
+  has_many :newses
+
   validates :short_name, uniqueness: true
 
   def save_games

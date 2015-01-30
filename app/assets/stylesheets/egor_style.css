@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic);
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: url(bg.jpg) no-repeat center top #151a2e;
+
+}
+h1 {
+    text-align: center;
+}
+
+.hd {
+    font-size: 47px;
+    text-align: center;
+    color: white;
+    background: url(headback.png) repeat;
+    height: 66px;
+    vertical-align: middle;
+    margin:-15px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    padding-top: 0;
+}
+.hs {
+    border: white solid 1px;
+    margin-left: 210px;
+    cursor: pointer;
+}
+
+
+.hots {
+    border: white solid 1px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+p.copyright {
+    color: white;
+    margin-top: 200px;
+    text-align: center;
+}

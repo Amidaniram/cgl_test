@@ -1,0 +1,47 @@
+<% content_for :content do %>
+    <div class="content" role="main">
+      <a href="" class="online-stream-btn">Онлайн стрим</a>
+      <div class="content__block">
+        <div class="content__block__heading heading">
+          <h1>Регистрация</h1>
+        </div>
+
+        <div class="content__block__content">
+          <div class="register-block">
+            <%= form_for(@news) do |f| %>
+                <% if @news.errors.any? %>
+                    <ul>
+                      <% @news.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                <% end %>
+                <div class="info-field">
+                  <label class="info-field__item info-field__item--text">
+                    <%= f.text_field :title, class: "info-field__item__input", placeholder: "Заголовок" %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <label style="color: #1e1b1c;">
+                    <%= f.text_area :text, size: "75x20", placeholder: "Текст", style:"border-radius: 3px" %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <label class="info-field__item info-field__item--select">
+                    <%= f.select :game, options_from_collection_for_select(Game.all, "id", "name") %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <label class="info-field__item info-field__item--select">
+                    <%= f.file_field :image_url %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <%= f.submit "Запостить", class: "button-submit" %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

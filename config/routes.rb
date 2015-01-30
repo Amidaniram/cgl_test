@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post 'registration', to: 'user#create'
     delete 'logout', to: 'session#destroy'
     post 'login', to: 'session#create'
+    resources :news
     get 'profile/:id', to: 'profile#show', as: 'profile'
   end
 

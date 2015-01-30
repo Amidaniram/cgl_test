@@ -1,2 +1,27 @@
-<%= link_to "Heartstone", game_root_path('hs') %>
-<%= link_to "Heroes of the Storm", game_root_path('hots') %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <%= stylesheet_link_tag "egor_style" %>
+  <%= stylesheet_link_tag "egor_hover", media: 'all' %>
+  <title>ChaosGameLeague</title>
+
+</head>
+<body>
+<header>
+
+  <h1 class="hd">Welcome to eSports Chaos Game League!</h1>
+
+</header>
+<div class="logo">
+  <%= link_to game_root_path('hs'), class: 'pox' do %><%= image_tag "hslogo.jpg", class: "hs", width: 250, height: 250 %><% end %>
+  <%= link_to game_root_path('hots'), class: 'hotsanim' do %><%= image_tag "hotslogo.jpg", class: "hots", width: 250, height: 250 %><% end %>
+
+</div>
+<h2>CHOOSE the discipline and GO forward to the TOP of league</h2>
+
+</body>
+<footer>
+  <p class ="copyright">Made in Russia © 2015 ChaosGameLeague</p>
+</footer>
+</html>
