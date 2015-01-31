@@ -1,0 +1,165 @@
+<% content_for :content do %>
+<div class="content" role="main">
+  <a href="" class="online-stream-btn">Онлайн стрим</a>
+  <div class="content__block">
+    <div class="content__block__heading heading">
+      <h1><%= @news.title %></h1>
+    </div>
+    <div class="content__block__content">
+      <div class="news-block whiteblock">
+        <a href="" class="news-img">
+          <%= image_tag(@news.avatar.url(:thumb), alt: "") %>
+        </a>
+        <article>
+          <%= @news.text %>
+        </article>
+        <div class="text-right">
+          <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-comment"></i></a>
+        </div>
+        </section>
+      </div>
+      <div class="comments-block whiteblock">
+        <!-- Comment start -->
+        <div class="comment">
+          <div class="comment__heading">
+                                <span href="" class="comment__heading__username">
+                                    <span class="comment__heading__username__text">Username</span>
+                                    <span class="dropdown-btn dropdown-btn--green">
+                                        <a class="about-user-tooltip">
+                                          <div class="about-user-tooltip__content">
+                                            <div class="ava">
+                                              <img src="img/ava.jpg" alt=""/>
+                                            </div>
+                                            <div class="signature">
+                                              <p><strong>Medved</strong></p>
+                                              <p>Профиль</p>
+                                            </div>
+                                            <span class="user-status user-status--online"></span>
+                                          </div>
+                                        </a>
+                                    </span>
+                                    <span class="comment__heading__username__text">13.11.14  20:30</span>
+                                </span>
+          </div>
+          <div class="comment__content">
+            <article>
+              <p>
+                Текст комента бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+                бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+              </p>
+            </article>
+          </div>
+          <div class="comment__footer">
+            <div class="text-right">
+              <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-thumbsup"></i></a>
+              <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-thumbsdown"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Comment end -->
+        <!-- Comment start -->
+        <div class="comment">
+          <div class="comment__heading">
+                                <span href="" class="comment__heading__username">
+                                    <span class="comment__heading__username__text">Username</span>
+                                    <span class="dropdown-btn dropdown-btn--green">
+                                        <a class="about-user-tooltip">
+                                          <div class="about-user-tooltip__content">
+                                            <div class="ava">
+                                              <img src="img/ava.jpg" alt=""/>
+                                            </div>
+                                            <div class="signature">
+                                              <p><strong>Medved</strong></p>
+                                              <p>Профиль</p>
+                                            </div>
+                                            <span class="user-status user-status--online"></span>
+                                          </div>
+                                        </a>
+                                    </span>
+                                    <span class="comment__heading__username__text">13.11.14  20:30</span>
+                                </span>
+          </div>
+          <div class="comment__content">
+            <article>
+              <p>
+                Текст комента бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+                бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+              </p>
+            </article>
+          </div>
+          <div class="comment__footer">
+            <div class="text-right">
+              <a href="" class="cmts-button
+                                                        button
+                                                        button-default
+                                                        button-rounded
+                                                        button-disabled"
+                 onclick="return false;">
+                11<i class="spr-comments spr-comments-thumbsup"></i>
+              </a>
+              <a href="" class="cmts-button
+                                                        button
+                                                        button-default
+                                                        button-rounded
+                                                        button-disabled"
+                 onclick="return false;">
+                11 <i class="spr-comments spr-comments-thumbsdown"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Comment end -->
+        <!-- Comment start -->
+        <div class="comment">
+          <div class="comment__heading">
+                                <span href="" class="comment__heading__username">
+                                    <span class="comment__heading__username__text">Username</span>
+                                    <span class="dropdown-btn dropdown-btn--green">
+                                        <a class="about-user-tooltip">
+                                          <div class="about-user-tooltip__content">
+                                            <div class="ava">
+                                              <img src="img/ava.jpg" alt=""/>
+                                            </div>
+                                            <div class="signature">
+                                              <p><strong>Medved</strong></p>
+                                              <p>Профиль</p>
+                                            </div>
+                                            <span class="user-status user-status--online"></span>
+                                          </div>
+                                        </a>
+                                    </span>
+                                    <span class="comment__heading__username__text">13.11.14  20:30</span>
+                                </span>
+          </div>
+          <div class="comment__content">
+            <article>
+              <p>
+                Текст комента бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+                бла бла блабла бла блабла бла блабла бла блабла бла блабла бла блабла бла бла
+              </p>
+            </article>
+          </div>
+          <div class="comment__footer">
+            <div class="text-right">
+              <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-thumbsup"></i></a>
+              <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-thumbsdown"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Comment end -->
+        <!-- Leave Comment block -->
+        <form action="" class="comment-leave">
+          <div class="input-group">
+            <input type="text" placeholder="Введите сообщение" class="form-control"/>
+                                <span class="input-group-btn">
+                                <button type="button" class=" btn button button-default">Написать</button>
+                                </span>
+          </div>
+
+        </form>
+        <!--// Leave Comment block end //-->
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

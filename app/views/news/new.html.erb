@@ -8,7 +8,7 @@
 
         <div class="content__block__content">
           <div class="register-block">
-            <%= form_for(@news) do |f| %>
+            <%= form_for @news, :html => { :multipart => true } do |f| %>
                 <% if @news.errors.any? %>
                     <ul>
                       <% @news.errors.full_messages.each do |message| %>
@@ -23,6 +23,11 @@
                 </div>
                 <div class="info-field">
                   <label style="color: #1e1b1c;">
+                    <%= f.text_area :short_text, size: "75x20", placeholder: "Короткий текст", style:"border-radius: 3px" %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <label style="color: #1e1b1c;">
                     <%= f.text_area :text, size: "75x20", placeholder: "Текст", style:"border-radius: 3px" %>
                   </label>
                 </div>
@@ -33,7 +38,7 @@
                 </div>
                 <div class="info-field">
                   <label class="info-field__item info-field__item--select">
-                    <%= f.file_field :image_url %>
+                    <%= f.file_field :avatar %>
                   </label>
                 </div>
                 <div class="info-field">
