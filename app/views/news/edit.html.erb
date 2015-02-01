@@ -22,17 +22,7 @@
                 </div>
                 <div class="info-field">
                   <label style="color: #1e1b1c;">
-                    <%= f.text_area :short_text, size: "75x20", placeholder: "Короткий текст", style:"border-radius: 3px" %>
-                  </label>
-                </div>
-                <div class="info-field">
-                  <label style="color: #1e1b1c;">
-                    <%= f.text_area :text, size: "75x20", placeholder: "Текст", style:"border-radius: 3px" %>
-                  </label>
-                </div>
-                <div class="info-field">
-                  <label class="info-field__item info-field__item--select">
-                    <%= f.select :game, options_from_collection_for_select(Game.all, "id", "name") %>
+                    <%= f.text_area :short_text, size: "75x10", placeholder: "Текст, который будет на главной", style:"border-radius: 3px" %>
                   </label>
                 </div>
                 <div class="info-field">
@@ -41,7 +31,17 @@
                   </label>
                 </div>
                 <div class="info-field">
-                  <%= f.submit "Запостить", class: "button-submit" %>
+                  <label style="color: #1e1b1c;">
+                    <%= cktext_area :news, :text, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'standart'} %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <label class="info-field__item info-field__item--select">
+                    <%= f.select :game, options_from_collection_for_select(Game.all, "id", "name") %>
+                  </label>
+                </div>
+                <div class="info-field">
+                  <%= f.submit "Изменить", class: "button-submit" %>
                 </div>
             <% end %>
           </div>

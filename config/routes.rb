@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root 'game_session#new'
   scope ':game', constraints: { game: /hs|hots|dota2/ } do
     get '/', to: 'game_session#show', as: 'game_root'

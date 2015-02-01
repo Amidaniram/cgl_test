@@ -3,7 +3,7 @@
   <a href="" class="online-stream-btn">Онлайн стрим</a>
   <div class="content__block">
     <div class="content__block__heading heading">
-      <h1><%= @news.title %></h1>
+      <h1><%= raw @news.title %></h1>
     </div>
     <div class="content__block__content">
       <div class="news-block whiteblock">
@@ -11,7 +11,7 @@
           <%= image_tag(@news.avatar.url(:thumb), alt: "") %>
         </a>
         <article>
-          <%= @news.text %>
+          <%= raw @news.text %>
         </article>
         <% if current_user && current_user.profile == @news.profile %>
         <div class="text-right">
