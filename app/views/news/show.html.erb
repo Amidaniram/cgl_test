@@ -13,7 +13,7 @@
         <article>
           <%= @news.text %>
         </article>
-        <% if current_user.profile == @news.profile %>
+        <% if current_user && current_user.profile == @news.profile %>
         <div class="text-right">
           <%= link_to "Edit", edit_news_path(id: params[:id]), class: "cmts-button button button-default button-rounded" %>
           <%= link_to "Delete", news_path(id: params[:id]), method: :delete, data: { confirm: "Уверен?" }, class: "cmts-button button button-default button-rounded" %>
