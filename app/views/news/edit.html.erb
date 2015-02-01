@@ -7,7 +7,7 @@
         </div>
         <div class="content__block__content">
           <div class="register-block">
-            <%= form_for @news, :html => { :multipart => true } do |f| %>
+            <%= form_for @news,url: news_path(game: params[:game], id: @news.id), :html => { :multipart => true } do |f| %>
                 <% if @news.errors.any? %>
                     <ul>
                       <% @news.errors.full_messages.each do |message| %>

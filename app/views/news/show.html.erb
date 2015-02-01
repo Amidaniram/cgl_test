@@ -13,9 +13,12 @@
         <article>
           <%= @news.text %>
         </article>
+        <% if current_user.profile == @news.profile %>
         <div class="text-right">
-          <a href="" class="cmts-button button button-default button-rounded">11<i class="spr-comments spr-comments-comment"></i></a>
+          <%= link_to "Edit", edit_news_path(id: params[:id]), class: "cmts-button button button-default button-rounded" %>
+          <%= link_to "Delete", news_path(id: params[:id]), method: :delete, data: { confirm: "Уверен?" }, class: "cmts-button button button-default button-rounded" %>
         </div>
+        <% end %>
         </section>
       </div>
       <div class="comments-block whiteblock">
