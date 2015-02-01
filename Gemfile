@@ -33,6 +33,7 @@ gem 'ckeditor'
 # gem 'capistrano-rails', group: :development
 
 group :production do
+  gem 'responders', '~> 2.0'
   gem 'pg'
   gem 'rails_12factor'
 end
