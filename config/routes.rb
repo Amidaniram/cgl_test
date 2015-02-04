@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     get '/', to: 'game_session#show', as: 'game_root'
     get 'registration', to: 'user#new'
     post 'registration', to: 'user#create'
+    post 'registration/check_email', to: 'user#check_email'
+    post 'registration/check_username', to: 'user#check_username'
     delete 'logout', to: 'session#destroy'
     post 'login', to: 'session#create'
     resources :news

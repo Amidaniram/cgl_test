@@ -9,7 +9,7 @@ class News < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/jpg', 'image/png']
   validates_attachment_size :avatar, less_than: 10.megabytes
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 115 }
   validates :short_text, presence: true
   validates :text, presence: true
   validates :profile_id, presence: true

@@ -171,6 +171,14 @@ label.info-field__item .info-field__item__input {
 .info-field__pass-strength-green span {
   background: #00a666;
 }
+
+.info-field__pass-strength-red {
+    color: red;
+}
+.info-field__pass-strength-red span {
+    background: red;
+}
+
 .checkbox label {
   padding-left: 0;
 }

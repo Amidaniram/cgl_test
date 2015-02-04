@@ -10,11 +10,10 @@
         </div>
         <div class="content__block__content">
           <% @news.each do |n| %>
+              <%= link_to news_path(n, game: params[:game]) do %>
           <div class="news-thumb">
             <section class="news-thumb__img">
-              <%= link_to news_path(n, game: params[:game]) do %>
                 <%= image_tag(n.avatar.url(:thumb), alt: "") %>
-              <% end %>
             </section>
             <section class="news-thumb__text">
               <article>
@@ -23,28 +22,10 @@
               <div class="news-thumb__text__actions">
                 <span class="left"><%=link_to profile_path(n.profile, game: params[:game]) do %><%= image_tag("user.png", alt: "") %> <%= n.profile.user.username %> <% end %></span>
                 <span class="left"><%= image_tag("calendar.png", alt: "") %> 06.11.14</span>
-                <div class="stars right">
-                  <ul>
-                    <li class="star star1">
-                      <a href="#" onclick="return false;"></a>
-                    </li>
-                    <li class="star star2">
-                      <a href="#" onclick="return false;"></a>
-                    </li>
-                    <li class="star star3">
-                      <a href="#" onclick="return false;"></a>
-                    </li>
-                    <li class="star star4">
-                      <a href="#" onclick="return false;"></a>
-                    </li>
-                    <li class="star star5">
-                      <a href="#" onclick="return false;"></a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </section>
           </div>
+              <% end %>
           <% end %>
           <a href="" class="load-more">Загрузить еще</a>
         </div>

@@ -26,6 +26,24 @@ class UserController < ApplicationController
     end
   end
 
+  def check_email
+    user = User.where(email: params[:email])
+    if (user.exists?)
+      render json: { status: "fail" }
+    else
+      render json: { status: "ok" }
+    end
+  end
+
+  def check_username
+    user = User.where(username: params[:username])
+    if (user.exists?)
+      render json: { status: "fail" }
+    else
+      render json: { status: "ok" }
+    end
+  end
+
   private
     def user_params
       params.require(:user).permit(:email, :username, :password, :password_confirmation)
