@@ -7,7 +7,6 @@ $(document).on("page:load ready", function(){
 
 function check_username() {
     var username = $('#username').val();
-    $('#username_info').remove();
     if (username.length > 2) {
         jQuery.ajax({
             type: "POST",
@@ -16,18 +15,23 @@ function check_username() {
             data: {"username": username},
             success: function (response) {
                 if (response.status == "ok") {
+                    $('#username_info').remove();
                     $('#username_label').after("<div class=\"info-field__pass-strength info-field__pass-strength-green\", id=\"username_info\">Свободен <span></span></div>")
                 } else if (response.status == "fail") {
+                    $('#username_info').remove();
                     $('#username_label').after("<div class=\"info-field__pass-strength info-field__pass-strength-red\", id=\"username_info\">Занят <span></span></div>")
                 }
             }
         })
     }
+    else
+    {
+        $('#username_info').remove();
+    }
 }
 
 function check_email() {
     var email = $('#email').val();
-    $('#email_info').remove();
     if (email.length > 5 ) {
         if (isValidEmailAddress(email)) {
             jQuery.ajax({
@@ -37,15 +41,22 @@ function check_email() {
                 data: {"email": email},
                 success: function (response) {
                     if (response.status == "ok") {
+                        $('#email_info').remove();
                         $('#email_label').after("<div class=\"info-field__pass-strength info-field__pass-strength-green\", id=\"email_info\">Свободен <span></span></div>")
                     } else if (response.status == "fail") {
+                        $('#email_info').remove();
                         $('#email_label').after("<div class=\"info-field__pass-strength info-field__pass-strength-red\", id=\"email_info\">Занят <span></span></div>")
                     }
                 }
             })
         } else {
+            $('#email_info').remove();
             $('#email_label').after("<div class=\"info-field__pass-strength info-field__pass-strength-red\", id=\"email_info\">Email is not valid <span></span></div>")
         }
+    }
+    else
+    {
+        $('#email_info').remove();
     }
 
 }
