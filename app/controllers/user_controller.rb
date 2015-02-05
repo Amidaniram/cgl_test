@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def create
     @user = User.new(user_params)
+    @user.lower_username = params[:user][:username].downcase
     @profile = Profile.new
     if @user.save
       @profile.user_id = @user.id
@@ -27,7 +28,7 @@ class UserController < ApplicationController
   end
 
   def check_email
-    user = User.where(email: params[:email])
+    user = User.where(email: params[:email].downcase)
     if (user.exists?)
       render json: { status: "fail" }
     else
@@ -36,7 +37,7 @@ class UserController < ApplicationController
   end
 
   def check_username
-    user = User.where(username: params[:username])
+    user = User.where(lower_username: params[:username].downcase)
     if (user.exists?)
       render json: { status: "fail" }
     else

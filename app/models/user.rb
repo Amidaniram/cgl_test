@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
   has_one :profile
   attr_accessor :password
 
-  validates :password, presence: true, confirmation: true, length: { in: 6..50 }
-  validates :email, uniqueness: true, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-  validates :username, uniqueness: true, presence: true, length: { in: 3..20 }
+  validates :password, presence: true, confirmation: true, length: { in: 6..50 }, on: :create
+  validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :username, uniqueness: { case_sensitive: false }, presence: true, length: { in: 3..20 }
 
   before_validation :prep_email
   before_save :encrypt_password
